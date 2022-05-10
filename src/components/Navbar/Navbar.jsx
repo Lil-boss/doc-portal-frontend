@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const menuItem = <>
-        <li className='hover:bg-accent rounded-lg'><Link to="/">Home</Link></li>
-        <li className='hover:bg-accent rounded-lg'><Link to="/about">About</Link></li>
-        <li className='hover:bg-accent rounded-lg'><Link to="/appointment">Appointment</Link></li>
-        <li className='hover:bg-accent rounded-lg'><Link to="/reviews">Reviews</Link></li>
-        <li className='hover:bg-accent rounded-lg'><Link to="/contact">Contact us</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg'><Link to="/">Home</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg'><Link to="/about">About</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg'><Link to="/appointment">Appointment</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/reviews">Reviews</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/contact">Contact us</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -20,7 +20,7 @@ const Navbar = () => {
                         {menuItem}
                     </ul>
                 </div>
-                <a href='/' className="btn btn-ghost normal-case text-xl px-14">Doctors Portal</a>
+                <a href='/' className="normal-case text-xl font-bold hover:text-primary px-14">Doctors Portal</a>
             </div>
             <div className="navbar-end pr-8 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
