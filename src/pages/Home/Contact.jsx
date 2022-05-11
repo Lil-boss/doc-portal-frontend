@@ -5,8 +5,8 @@ const Contact = () => {
     return (
         <section style={{
             backgroundImage: `url(${appointment})`,
-        }} className="h-[600px] mb-20 mt-28">
-            <div className='w-[450px] h-[400px] absolute left-1/3 mt-24 text-center'>
+        }} className="h-[600px] mt-28">
+            <div className='max-w-lg mx-auto text-center pt-20'>
                 <h4 className='text-xl text-secondary'>Contact Us</h4>
                 <h1 className='text-4xl text-white mt-2 mb-10'>Stay connect with us</h1>
                 <form>
@@ -16,7 +16,7 @@ const Contact = () => {
                     <PrimaryButton>Submit</PrimaryButton>
                 </form>
             </div>
-        </section>
+        </section >
     );
 };
 
