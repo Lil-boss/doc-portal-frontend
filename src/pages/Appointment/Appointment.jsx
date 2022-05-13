@@ -4,10 +4,12 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import chair from "../../assets/images/chair.png"
 import AppointmentCard from '../../components/AppointmentCard/AppointmentCard';
+import BookingModal from "../../components/BookingModal/BookingModal"
+import Footer from "../Extra/Footer"
 const Appointment = () => {
-    const [selected, setSelected] = useState(new Date());
+    const [date, setDate] = useState(new Date());
     const [services, setServices] = useState([]);
-
+    const [treatment, setTreatment] = useState(null);
 
     useEffect(() => {
         fetch('service.json')
@@ -16,34 +18,35 @@ const Appointment = () => {
     }, [])
     return (
         <section>
-            <div class="hero min-h-screen bg-base-100">
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                    <img src={chair} class="max-w-lg rounded-lg shadow-2xl" alt='' />
-                    <div class="p-32">
+            <div className="hero min-h-screen bg-base-100">
+                <div className="hero-content flex-col lg:flex-row-reverse">
+                    <img src={chair} className="max-w-lg rounded-lg shadow-2xl" alt='' />
+                    <div className="p-32">
                         <DayPicker
                             className='font-bold text-sm rounded-lg shadow-lg '
                             mode="single"
-                            selected={selected}
-                            onSelect={setSelected}
+                            selected={date}
+                            onSelect={setDate}
                         />
                     </div>
-                </div>
-            </div>
+                </div >
+            </div >
             <div className='text-center test-xl text-secondary mb-24'>
-                <h3>Available Appointments on {format(selected, 'PP')}</h3>
+                <h3>Available Appointments on {format(date, 'PP')}</h3>
             </div>
-            <div className='w-4/5 mx-auto'>
-                <div className='grid grid-cols-3 gap-3'>
+            <div className='w-11/12 mx-auto'>
+                <div className='grid grid-cols-3 gap-3 mb-20'>
                     {
                         services.map(service => <AppointmentCard key={service._id}
-                            name={service.name}
-                            slots={service.slots}
+                            service={service}
+                            setTreatment={setTreatment}
                         />)
                     }
-
                 </div>
+                {treatment && <BookingModal treatment={treatment} date={date} />}
             </div>
-        </section>
+            <Footer />
+        </section >
     );
 };
 
