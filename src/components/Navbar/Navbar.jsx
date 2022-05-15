@@ -8,6 +8,8 @@ const Navbar = () => {
         <li className='hover:bg-accent hover:text-white rounded-lg'><Link to="/appointment">Appointment</Link></li>
         <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/reviews">Reviews</Link></li>
         <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/contact">Contact us</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/reviews">Reviews</Link></li>
+        <li className='hover:bg-accent hover:text-white rounded-lg '><Link to="/login">Login</Link></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -22,7 +24,7 @@ const Navbar = () => {
                 </div>
                 <a href='/' className="normal-case text-xl font-bold hover:text-primary px-14">Doctors Portal</a>
             </div>
-            <div className="navbar-end pr-8 hidden lg:flex">
+            <div className="navbar-end pr-4 hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {menuItem}
                 </ul>
