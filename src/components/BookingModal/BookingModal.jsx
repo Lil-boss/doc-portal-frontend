@@ -11,15 +11,15 @@ const BookingModal = ({ treatment, date }) => {
                     <h3 className="font-bold text-lg">{name}</h3>
                     <div className='mt-3'>
                         <form className='grid grid-cols-1 gap-4 justify-items-center'>
-                            <input type="text" disabled value={format(date, 'PP')} placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs" />
-                            <select class="select select-bordered w-full max-w-xs">
+                            <input type="text" disabled value={format(date, 'PP')} placeholder="Type here" className="input input-bordered input-sm w-full max-w-xs" />
+                            <select className="select select-bordered w-full max-w-xs">
                                 {
                                     slots.map(slot => <option key={slot} value={slot}>{slot}</option>)
                                 }
                             </select>
-                            <input type="text" placeholder="Name" class="input input-bordered input-sm w-full max-w-xs" />
-                            <input type="text" placeholder="Email" class="input input-bordered input-sm w-full max-w-xs" />
-                            <input type="text" placeholder="Phone number" class="input input-bordered input-sm w-full max-w-xs" />
+                            <input type="text" placeholder="Name" className="input input-bordered input-sm w-full max-w-xs" />
+                            <input type="text" placeholder="Email" className="input input-bordered input-sm w-full max-w-xs" />
+                            <input type="text" placeholder="Phone number" className="input input-bordered input-sm w-full max-w-xs" />
                             <input className="btn btn-secondary w-2/3 text-white" value="submit" type="submit" />
                         </form>
                     </div>
